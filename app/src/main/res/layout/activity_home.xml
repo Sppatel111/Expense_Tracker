@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Manage Transactions Button -->
+    <Button
+        android:id="@+id/btnManageTransactions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage Transactions" />
+
+    <!-- View Reports Button -->
+    <Button
+        android:id="@+id/btnViewReports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Reports"
+        android:layout_marginTop="10dp" />
+
+    <!-- User Details ImageButton -->
+    <ImageButton
+        android:id="@+id/btnUserDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/user_icon"
+        android:contentDescription="User Details"
+        android:layout_marginTop="20dp" />
+
+    <!-- Password Manager ImageButton -->
+    <ImageButton
+        android:id="@+id/btnPasswordManager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/password_icon"
+        android:contentDescription="Password Manager"
+        android:layout_marginTop="10dp" />
+
+    <!-- Settings ImageButton -->
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/settings_icon"
+        android:contentDescription="Settings"
+        android:layout_marginTop="10dp" />
+
+    <!-- Exit Button -->
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:layout_marginTop="20dp" />
+</LinearLayout>

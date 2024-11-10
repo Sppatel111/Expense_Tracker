@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgSettingsIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/settings_icon"
+        android:contentDescription="Settings Icon"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/tvUserDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Details"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:id="@+id/imgUserIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/user_icon"
+        android:contentDescription="User Icon"
+        android:layout_gravity="center"
+        android:paddingTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvPasswordManager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password Manager"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:id="@+id/imgPasswordIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/password_icon"
+        android:contentDescription="Password Icon"
+        android:layout_gravity="center"
+        android:paddingTop="8dp" />
+</LinearLayout>
