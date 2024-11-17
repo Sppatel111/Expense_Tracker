@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
-    android:background="@android:color/white">
+    android:background="@color/backgroundColor"> <!-- Set background color -->
 
-    <!-- List to display reports -->
+    <!-- Header Text -->
+    <TextView
+        android:id="@+id/headerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expense Details"
+        android:textSize="24sp"
+        android:textColor="@color/primaryDark"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Description Text -->
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Here you can view all your expense reports. Tap on a report for more details."
+        android:textSize="16sp"
+        android:textColor="@color/textSecondaryColor"
+        android:layout_marginBottom="16dp" />
+
+    <!-- ListView to Display Reports -->
     <ListView
         android:id="@+id/lvReports"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/textSecondaryColor"
+        android:dividerHeight="1dp"
+        android:background="@color/accentColor" /> <!-- Set background color for ListView -->
+
+
+
 </LinearLayout>

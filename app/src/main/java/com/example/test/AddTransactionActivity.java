@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.os.Bundle;
+import android.content.SharedPreferences;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -11,6 +12,7 @@ public class AddTransactionActivity extends AppCompatActivity {
     EditText etDate, etCategory, etAmount, etDescription;
     Button btnSave;
     DatabaseHelper db;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,10 @@ public class AddTransactionActivity extends AppCompatActivity {
             double amount = Double.parseDouble(etAmount.getText().toString());
             String description = etDescription.getText().toString();
 
-            boolean inserted = db.insertTransaction(date, category, amount, description);
+            sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+            String username = sharedPreferences.getString("loggedInUser", "Guest");
+
+            boolean inserted = db.insertTransaction(username, date, category, amount, description);
             if (inserted) {
                 Toast.makeText(this, "Transaction added", Toast.LENGTH_SHORT).show();
                 finish();

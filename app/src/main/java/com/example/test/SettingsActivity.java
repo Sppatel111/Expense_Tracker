@@ -2,45 +2,41 @@ package com.example.test;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    ImageView imgSettingsIcon, imgUserIcon, imgPasswordIcon;
-    TextView tvUserDetails, tvPasswordManager;
+    LinearLayout userDetailsLayout, changePasswordLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        // Initialize views
-        imgSettingsIcon = findViewById(R.id.imgSettingsIcon);
-        imgUserIcon = findViewById(R.id.imgUserIcon);
-        imgPasswordIcon = findViewById(R.id.imgPasswordIcon);
-        tvUserDetails = findViewById(R.id.tvUserDetails);
-        tvPasswordManager = findViewById(R.id.tvPasswordManager);
+        // Initialize layouts for user details and change password
+        userDetailsLayout = findViewById(R.id.layoutUserDetails);
+        changePasswordLayout = findViewById(R.id.layoutChangePassword);
 
-        // Set click listeners
-        tvUserDetails.setOnClickListener(v -> showUserDetails());
-        tvPasswordManager.setOnClickListener(v -> openPasswordManager());
+        // Click listener for User Details
+        userDetailsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Open User Details Activity
+                Intent intent = new Intent(SettingsActivity.this, UserDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        imgUserIcon.setOnClickListener(v -> showUserDetails());
-        imgPasswordIcon.setOnClickListener(v -> openPasswordManager());
-    }
-
-    // Display user details (this can be expanded based on your requirements)
-    private void showUserDetails() {
-        Toast.makeText(this, "User Details: Sneha Patel", Toast.LENGTH_SHORT).show();
-        // You can navigate to a UserDetailsActivity if needed
-    }
-
-    // Open the PasswordManagerActivity
-    private void openPasswordManager() {
-        Intent intent = new Intent(SettingsActivity.this, PasswordManagerActivity.class);
-        startActivity(intent);
+        // Click listener for Change Password
+        changePasswordLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Open Password Manager Activity
+                Intent intent = new Intent(SettingsActivity.this, PasswordManagerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

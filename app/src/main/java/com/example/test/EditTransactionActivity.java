@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.content.SharedPreferences;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ public class EditTransactionActivity extends AppCompatActivity {
     Button btnUpdate, btnDelete;
     DatabaseHelper db;
     int transactionId;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class EditTransactionActivity extends AppCompatActivity {
         etDescription = findViewById(R.id.etDescription);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
+
 
         db = new DatabaseHelper(this);
 
@@ -45,7 +48,11 @@ public class EditTransactionActivity extends AppCompatActivity {
     }
 
     private void loadTransactionDetails(int transactionId) {
-        Cursor cursor = db.getTransactionById(transactionId);
+
+        sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        String username = sharedPreferences.getString("loggedInUser", "Guest");
+
+        Cursor cursor = db.getTransactionById(username, transactionId);
 
         if (cursor != null && cursor.moveToFirst()) {
             int dateIndex = cursor.getColumnIndex("date");
@@ -87,8 +94,10 @@ public class EditTransactionActivity extends AppCompatActivity {
 
         try {
             double amount = Double.parseDouble(amountString);
+            sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+            String username = sharedPreferences.getString("loggedInUser", "Guest");
 
-            if (db.updateTransaction(transactionId, date, category, amount, description)) {
+            if (db.updateTransaction(username, transactionId, date, category, amount, description)) {
                 Toast.makeText(this, "Transaction updated successfully", Toast.LENGTH_SHORT).show();
                 finish();
             } else {
@@ -100,7 +109,10 @@ public class EditTransactionActivity extends AppCompatActivity {
     }
 
     private void deleteTransaction() {
-        if (db.deleteTransaction(transactionId)) {
+        sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        String username = sharedPreferences.getString("loggedInUser", "Guest");
+
+        if (db.deleteTransaction(username, transactionId)) {
             Toast.makeText(this, "Transaction deleted successfully", Toast.LENGTH_SHORT).show();
             finish();
         } else {

@@ -1,32 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:orientation="vertical"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:padding="16dp">
-
-<EditText
-    android:id="@+id/etUsername"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Username" />
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
 
-<EditText
-    android:id="@+id/etPassword"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Password"
-    android:inputType="textPassword" />
+    <!-- App Logo or Image -->
+    <ImageView
+        android:id="@+id/ivLoginLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/login_image"
+        android:contentDescription="Login Logo"
+        android:layout_marginBottom="20dp" />
 
-<Button
-    android:id="@+id/btnLogin"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Login" />
+    <!-- Username Input -->
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:backgroundTint="@color/primaryColor"
+        android:textColorHint="@color/primaryDark"
+        android:textColor="@color/textPrimaryColor"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
 
-<Button
-    android:id="@+id/btnSignup"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Signup" />
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:backgroundTint="@color/primaryColor"
+        android:textColorHint="@color/primaryDark"
+        android:textColor="@color/textPrimaryColor"
+        android:padding="12dp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="@color/buttonTextColor"
+        android:backgroundTint="@color/buttonBackground"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Signup Button -->
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        android:textColor="@color/buttonTextColor"
+        android:backgroundTint="@color/buttonBackground"
+        android:padding="12dp" />
 </LinearLayout>

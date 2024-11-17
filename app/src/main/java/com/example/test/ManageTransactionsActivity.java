@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-
+import android.content.SharedPreferences;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -20,6 +20,7 @@ public class ManageTransactionsActivity extends AppCompatActivity {
     DatabaseHelper db;
     ArrayList<String> transactionList;
     ArrayAdapter<String> adapter;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +57,10 @@ public class ManageTransactionsActivity extends AppCompatActivity {
                         startActivity(intent);
                     })
                     .setNegativeButton("Delete", (dialog, which) -> {
-                        boolean deleted = db.deleteTransaction(transactionId);
+                        sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+                        String username = sharedPreferences.getString("loggedInUser", "Guest");
+
+                        boolean deleted = db.deleteTransaction(username, transactionId);
                         if (deleted) {
                             Toast.makeText(this, "Transaction deleted", Toast.LENGTH_SHORT).show();
                             loadTransactions(); // Refresh the list after deletion
@@ -69,7 +73,10 @@ public class ManageTransactionsActivity extends AppCompatActivity {
         });
     }
     private void loadTransactions() {
-        Cursor cursor = db.getAllTransactions();
+        sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        String username = sharedPreferences.getString("loggedInUser", "Guest");
+
+        Cursor cursor = db.getAllTransactions(username);
         transactionList.clear();
 
         if (cursor != null && cursor.moveToFirst()) {

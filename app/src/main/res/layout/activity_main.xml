@@ -1,61 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@color/primaryLight">
 
-    <!-- Manage Transactions Button -->
-    <Button
-        android:id="@+id/btnManageTransactions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Manage Transactions"
-        android:layout_marginTop="16dp" />
 
-    <!-- View Reports Button -->
-    <Button
-        android:id="@+id/btnViewReports"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View Reports"
-        android:layout_marginTop="16dp" />
-
-    <!-- Settings Icon -->
     <ImageView
-        android:id="@+id/imgSettings"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/settings_icon"
-        android:contentDescription="Settings Icon"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp" />
+        android:id="@+id/ivLogo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="App Logo"
+        android:src="@drawable/landing_icon" />
 
-    <!-- Password Manager Icon -->
-    <ImageView
-        android:id="@+id/imgPasswordManager"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/password_icon"
-        android:contentDescription="Password Manager Icon"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp" />
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="356dp"
+        android:layout_height="54dp"
+        android:gravity="center"
+        android:paddingBottom="20dp"
+        android:text="Always take control of your finances"
+        android:textColor="@color/textPrimaryColor"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-    <!-- User Details Icon -->
-    <ImageView
-        android:id="@+id/imgUserDetails"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/user_icon"
-        android:contentDescription="User Details Icon"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp" />
-
-    <!-- Exit Button -->
-    <Button
-        android:id="@+id/btnExit"
-        android:layout_width="match_parent"
+    <!-- App Description -->
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="281dp"
         android:layout_height="wrap_content"
-        android:text="Exit"
-        android:layout_marginTop="24dp" />
+        android:gravity="center"
+        android:paddingBottom="40dp"
+        android:text="Finances must be arranged for a better future."
+        android:textColor="@color/textSecondaryColor"
+        android:textSize="16sp" />
+
+    <!-- Get Started Button -->
+    <Button
+        android:id="@+id/btnGetStarted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/buttonBackground"
+        android:padding="12dp"
+        android:text="Get Started"
+        android:textColor="@color/buttonTextColor"
+        android:textSize="18sp" />
 </LinearLayout>

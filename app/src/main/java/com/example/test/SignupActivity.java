@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +12,7 @@ public class SignupActivity extends AppCompatActivity {
 
     EditText etUsername, etEmail, etPhone, etPassword, etConfirmPassword;
     Button btnRegister;
+    TextView tvAlreadyHaveAccount;
     DatabaseHelper db;
 
     @Override
@@ -18,14 +20,17 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        // Initialize Views
         etUsername = findViewById(R.id.etUsername);
         etEmail = findViewById(R.id.etEmail);
         etPhone = findViewById(R.id.etPhone);
         etPassword = findViewById(R.id.etPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
         btnRegister = findViewById(R.id.btnRegister);
+        tvAlreadyHaveAccount = findViewById(R.id.tvAlreadyHaveAccount);
         db = new DatabaseHelper(this);
 
+        // Register Button Click Listener
         btnRegister.setOnClickListener(v -> {
             String username = etUsername.getText().toString();
             String email = etEmail.getText().toString();
@@ -58,6 +63,13 @@ public class SignupActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(SignupActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        // Click Listener for "Already have an account? Login here"
+        tvAlreadyHaveAccount.setOnClickListener(v -> {
+            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 }

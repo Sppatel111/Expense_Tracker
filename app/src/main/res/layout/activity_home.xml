@@ -1,57 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/backgroundColor">
 
-    <!-- Manage Transactions Button -->
-    <Button
-        android:id="@+id/btnManageTransactions"
+    <LinearLayout
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Manage Transactions" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
-    <!-- View Reports Button -->
-    <Button
-        android:id="@+id/btnViewReports"
+        <TextView
+            android:id="@+id/greetingText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="24sp"
+            android:textColor="@color/primaryDark"
+            android:textStyle="bold"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/menu_home" />
+    </LinearLayout>
+
+    <!-- Statement -->
+    <TextView
+        android:id="@+id/statement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Reports"
-        android:layout_marginTop="10dp" />
+        android:text="Welcome to Your Financial Hub! Manage transactions and view detailed reports with ease."
+        android:textSize="22sp"
+        android:textColor="@color/primaryDark"
+        android:gravity="center"
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="24dp"
+        android:padding="8dp" />
 
-    <!-- User Details ImageButton -->
-    <ImageButton
-        android:id="@+id/btnUserDetails"
-        android:layout_width="wrap_content"
+    <!-- Container for both cards -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/user_icon"
-        android:contentDescription="User Details"
-        android:layout_marginTop="20dp" />
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@id/statement"
+        android:layout_marginTop="24dp"
+        android:gravity="center">
 
-    <!-- Password Manager ImageButton -->
-    <ImageButton
-        android:id="@+id/btnPasswordManager"
-        android:layout_width="wrap_content"
+    <!-- Expense Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/password_icon"
-        android:contentDescription="Password Manager"
-        android:layout_marginTop="10dp" />
+        android:layout_weight="1"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
 
-    <!-- Settings ImageButton -->
-    <ImageButton
-        android:id="@+id/btnSettings"
-        android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/expenseTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage Transaction"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:id="@+id/expenseAddIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_add"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/expenseTitle" />
+
+            <ImageView
+                android:id="@+id/expenseIcon"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/expense"
+                android:layout_below="@id/expenseTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Report Card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/settings_icon"
-        android:contentDescription="Settings"
-        android:layout_marginTop="10dp" />
+        android:layout_weight="1"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/reportTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expense     Details"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:id="@+id/reportAddIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_add"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/reportTitle" />
+
+            <ImageView
+                android:id="@+id/reportIcon"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/report"
+                android:layout_below="@id/reportTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
 
     <!-- Exit Button -->
     <Button
-        android:id="@+id/btnExit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Exit"
-        android:layout_marginTop="20dp" />
-</LinearLayout>
+    android:id="@+id/btnExit"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:text="Exit"
+    android:textSize="12dp"
+    android:textColor="@color/buttonTextColor"
+    android:backgroundTint="@color/buttonBackground"
+    android:paddingVertical="8dp"
+    android:paddingHorizontal="12dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginBottom="20dp"
+    android:layout_marginEnd="20dp" />
+
+</RelativeLayout>

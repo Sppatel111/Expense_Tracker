@@ -1,48 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:orientation="vertical"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:padding="16dp">
-
-<EditText
-    android:id="@+id/etUsername"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Username"
-    android:inputType="textPersonName" />
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
 
-<EditText
-    android:id="@+id/etEmail"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Email ID"
-    android:inputType="textEmailAddress" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">  <!-- Add this line -->
 
-<EditText
-    android:id="@+id/etPhone"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Phone Number"
-    android:inputType="phone" />
+        <!-- App Logo or Signup Image -->
+        <ImageView
+            android:id="@+id/ivSignupLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/login_image"
+            android:contentDescription="Signup Logo"
+            android:layout_marginBottom="20dp" />
 
-<EditText
-    android:id="@+id/etPassword"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Password"
-    android:inputType="textPassword" />
+        <!-- Username Input Field -->
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="textPersonName"
+            android:backgroundTint="@color/primaryColor"
+            android:textColorHint="@color/primaryDark"
+            android:textColor="@color/textPrimaryColor"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
 
-<EditText
-    android:id="@+id/etConfirmPassword"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Confirm Password"
-    android:inputType="textPassword" />
+        <!-- Email Input Field -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email ID"
+            android:inputType="textEmailAddress"
+            android:backgroundTint="@color/primaryColor"
+            android:textColorHint="@color/primaryDark"
+            android:textColor="@color/textPrimaryColor"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
 
-<Button
-    android:id="@+id/btnRegister"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Register" />
-</LinearLayout>
+        <!-- Phone Number Input Field -->
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:backgroundTint="@color/primaryColor"
+            android:textColorHint="@color/primaryDark"
+            android:textColor="@color/textPrimaryColor"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Password Input Field -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:backgroundTint="@color/primaryColor"
+            android:textColorHint="@color/primaryDark"
+            android:textColor="@color/textPrimaryColor"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Confirm Password Input Field -->
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:backgroundTint="@color/primaryColor"
+            android:textColorHint="@color/primaryDark"
+            android:textColor="@color/textPrimaryColor"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textColor="@color/buttonTextColor"
+            android:backgroundTint="@color/buttonBackground"
+            android:padding="14dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Already Have an Account Text -->
+        <TextView
+            android:id="@+id/tvAlreadyHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account? Login here"
+            android:textColor="@color/primaryDark"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:gravity="center" />
+    </LinearLayout>
+</ScrollView>

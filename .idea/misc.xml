@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1585" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_add_transaction.xml" value="0.20416666666666666" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_edit_transaction.xml" value="0.14895833333333333" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_manage_transactions.xml" value="0.22" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_password_manager.xml" value="0.18" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_settings.xml" value="0.21285140562248997" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_signup.xml" value="0.22" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_splash.xml" value="0.1539855072463768" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_user_details.xml" value="0.25" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/layout/activity_view_reports.xml" value="0.1" />
+        <entry key="..\:/GITHUB PROJECTS/PROJECT 4/test/app/src/main/res/menu/menu_home.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/test/app/src/main/res/layout/activity_add_transaction.xml" value="0.18478260869565216" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/test/app/src/main/res/layout/activity_change_password.xml" value="0.13934426229508196" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/test/app/src/main/res/layout/activity_edit_transaction.xml" value="0.18478260869565216" />
